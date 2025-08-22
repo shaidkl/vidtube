@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>All Videos</title>
+</head>
+<body>
+  <h2>Uploaded Videos</h2>
+  {% if videos %}
+    <ul>
+      {% for video in videos %}
+        <li><a href="{{ url_for('play_video', filename=video) }}">{{ video }}</a></li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No videos uploaded yet.</p>
+  {% endif %}
+
+  <br>
+  <a href="{{ url_for('index') }}">Upload More</a>
+</body>
+</html>
